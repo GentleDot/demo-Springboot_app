@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head lang="ko">
+    <title>Oops!</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+    <div class="errorPage">
+        <span class="oops">Oops!</span><br/>
+        <img th:src="@{/images/MissingPage.png}" alt="404 error page image - Dead Computer by Ilsur Aptukov from the Noun Project"/>
+        <p>
+            There seems to be a problem with the page you requested
+            <span th:text="${path}">.</span> <!-- 요청 경로 표시 -->
+        </p>
+        <p th:text="${'Details : ' + message}">error message</p>
+    </div>
+</body>
+
+</html>

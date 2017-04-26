@@ -17,3 +17,20 @@ body{
 label{
     font-weight: bold;
 }
+
+/* error */
+.error{
+    color: red;
+}
+
+.errorPage{
+    text-align: center;
+}
+
+.errorPage img{
+    max-width: 500px;
+}
+
+.oops{
+    font-size: 76px;
+}
