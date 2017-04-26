@@ -1,6 +1,7 @@
 package net.gentledot.readinglist;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,14 +14,18 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/")
+@ConfigurationProperties(prefix = "amazon") // 프로퍼티 주입
 public class ReadingListController {
-    private static final String READER = "craig";
-
     private ReadingListRepository readingListRepository;
+    private String associateId;
 
     @Autowired
     public ReadingListController(ReadingListRepository readingListRepository){
         this.readingListRepository = readingListRepository;
+    }
+
+    public void setAssociateId(String associateId){ // 제휴 ID의 setter
+        this.associateId = associateId;
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -29,6 +34,7 @@ public class ReadingListController {
         if(readingList != null){
             model.addAttribute("books", readingList);
             model.addAttribute("reader", reader);
+            model.addAttribute("amazonID", associateId);
         }
         return "readingList";
     }
