@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+body{
+    background-color : #ccc;
+    font-family: arial, helvetica, sans-serif;
+}
+
+.bookHeadline{
+    font-size : 12px;
+    font-weight : bold;
+}
+
+.bookDescription{
+    font-size: 10px;
+}
+
+label{
+    font-weight: bold;
+}
+
+/* error */
+.error{
+    color: red;
+}
+
+.errorPage{
+    text-align: center;
+}
+
+.errorPage img{
+    max-width: 500px;
+}
+
+.oops{
+    font-size: 76px;
+}
